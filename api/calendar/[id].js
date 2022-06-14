@@ -1,6 +1,6 @@
 // @ts-check
-const notionCalendarSum = require("../../../render/notionCalendarSum");
-const renderError = require("../../../render/error");
+const notionCalendarSum = require("../../render/notionCalendarSum");
+const renderError = require("../../render/error");
 const axios = require("axios").default;
 
 module.exports = async (req, res) => {

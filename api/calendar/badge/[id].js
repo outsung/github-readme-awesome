@@ -1,5 +1,5 @@
 // @ts-check
-const renderError = require("../../../../render/error");
+const renderError = require("../../../render/error");
 const { makeBadge } = require("badge-maker");
 
 const axios = require("axios").default;
