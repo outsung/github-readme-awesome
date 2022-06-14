@@ -1,0 +1,13 @@
+{
+  "name": "github-readme-awesome",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": "outsung",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.24.0",
+    "badge-maker": "^3.3.1"
+  }
+}
