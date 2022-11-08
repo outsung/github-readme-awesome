@@ -1,4 +1,5 @@
 // @ts-check
+const { Blob } = require("buffer");
 const renderError = require("../../render/error");
 
 module.exports = async (req, res) => {
