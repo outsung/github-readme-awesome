@@ -4,7 +4,7 @@ const renderError = require("../../render/error");
 module.exports = async (req, res) => {
   const b64String = req.query.base64 || "";
   console.log("b64String: ", b64String);
-  var byteString = atob(b64String);
+  var byteString = atob(decodeURIComponent(b64String));
   var arrayBuffer = new ArrayBuffer(byteString.length);
   var intArray = new Uint8Array(arrayBuffer);
   for (var i = 0; i < byteString.length; i++) {
