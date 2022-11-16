@@ -1,11 +1,13 @@
 // @ts-check
 const buffer = require("buffer");
 const renderError = require("../../render/error");
+const LZString = require("lz-string");
 
 module.exports = async (req, res) => {
   const b64String = req.query.base64 || "";
+
   let decode = Buffer.from(
-    decodeURIComponent(b64String).split(",")[1],
+    (LZString.decompressFromEncodedURIComponent(b64String) || "").split(",")[1],
     "base64"
   );
   res.setHeader("Content-Type", "image/png");
