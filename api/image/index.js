@@ -1,7 +1,6 @@
 // @ts-check
 const buffer = require("buffer");
 const renderError = require("../../render/error");
-const LZString = require("lz-string");
 const QRCode = require("qrcode");
 
 module.exports = async (req, res) => {
