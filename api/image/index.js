@@ -2,12 +2,13 @@
 const buffer = require("buffer");
 const renderError = require("../../render/error");
 const LZString = require("lz-string");
+const QRCode = require("qrcode");
 
 module.exports = async (req, res) => {
-  const b64String = req.query.base64 || "";
+  const url = req.query.url || "";
 
   let decode = Buffer.from(
-    (LZString.decompressFromEncodedURIComponent(b64String) || "").split(",")[1],
+    (await QRCode.toDataURL(decodeURIComponent(url))).split(",")[1],
     "base64"
   );
   res.setHeader("Content-Type", "image/png");
