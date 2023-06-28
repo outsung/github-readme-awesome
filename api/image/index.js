@@ -5,7 +5,7 @@ const QRCode = require("qrcode");
 
 const handler = async (req, res) => {
   const url = req.query.url || "";
-  const isDownload = req.query.isDownload || false;
+  const isDownload = Boolean(req.query.isDownload || "");
 
   let decode = Buffer.from(
     (await QRCode.toDataURL(decodeURIComponent(url))).split(",")[1],
