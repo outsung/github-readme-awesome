@@ -14,7 +14,7 @@ const handler = async (req, res) => {
   res.setHeader("Content-Type", "image/png");
   res.setHeader("Content-Length", decode.length);
   isDownload && res.setHeader("Content-Disposition", "attachment");
-  res.res.send(decode);
+  res.send(decode);
 };
 
 module.exports = handler;
